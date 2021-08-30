@@ -5,8 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="my game library" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40 px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Grid.Column="0">
+            <Label  Content="My games" Margin="0,10,0,0"/>
+            <Button  Width="20" Height="20" Content="+" Margin="10,10,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="White"/>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </WrapPanel>
+        <ListBox Grid.Row="1" Grid.Column="0"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="https://upload.wikimedia.org/wikipedia/en/9/9d/Cover_Art_of_Doom_Eternal.png"></Image>
+
+            <StackPanel Grid.Column="1">
+                <WrapPanel>
+                    <Label Content="Title :" Margin="0,0,50,0"/>
+                    <TextBox Width="100 px" HorizontalAlignment="Right"/>
+                </WrapPanel>
+                <WrapPanel  Margin="0,20,0,0">
+                    <Label Content="Description :"/>
+                    <TextBox Width="170 px" Height="50" HorizontalAlignment="Right" Margin="8,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,30,0,0">
+                    <Label Content="Editor :" Margin="0,0,40,0"/>
+                    <TextBox Width="100 px" HorizontalAlignment="Right"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="0,30,0,0">
+                    <Label Content="Year :" Margin="0,0,50,0"/>
+                    <TextBox Width="100 px" HorizontalAlignment="Right"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="0,30,0,0">
+                    <Label Content="Console :" Margin="0,0,30,0"/>
+                    <TextBox Width="100 px" HorizontalAlignment="Right"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="0,30,0,0">
+                    <Label Content="Rating :" Margin="0,0,40,0"/>
+                    <Slider Width="100px" Margin="0,5,0,0"/>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+
 
     </Grid>
 </Window>
